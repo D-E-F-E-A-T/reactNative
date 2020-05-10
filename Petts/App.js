@@ -8,6 +8,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Route from './src/Route';
 import Tela1 from './src/components/Tela1';
 import Tela2 from './src/components/Tela2';
+import Preload from './src/Preload/Preload';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -15,11 +16,12 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Preload" component={Preload} />
         <Stack.Screen name="Route" component={Route} />
         <Stack.Screen name="Tela1" component={Tela1} />
         <Stack.Screen name="Tela2" component={Tela2} />
-      </Stack.Navigator> */}
+      </Stack.Navigator>
 
       <Drawer.Navigator>
         <Drawer.Screen name="Route" component={Route} />
