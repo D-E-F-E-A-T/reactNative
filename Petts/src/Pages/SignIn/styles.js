@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import LinearGradient from 'react-native-linear-gradient';
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient).attrs({
+    colors: ['rgba(128,128,128,0.6)','rgba(0,0,0,0.7)']
+})`
 flex: 1;
 align-items: center;
 justify-content: center;
@@ -57,4 +60,9 @@ color: rgba(128,128,128,1);
 font-size: 25px;
 font-weight: bold;
 margin-bottom: 5px;
+`;
+
+export const FundoGradient = styled(LinearGradient).attrs({
+    colors: ['#2ecc71','#2c3e50']
+})`
 `;

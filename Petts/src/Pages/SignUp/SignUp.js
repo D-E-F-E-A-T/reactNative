@@ -14,7 +14,7 @@ const SignIn = ({ navigation }) => {
   return(
       <>
         
-        <ImageBackground source={require('../../assets/img/dogecat.jpg')} style={styles.image}>
+        <ImageBackground source={require('../../assets/img/cat.jpg')} style={styles.image}>
             
             <Container>
                 <ButtonReturn onPress={()=> navigation.navigate('SignIn') }>

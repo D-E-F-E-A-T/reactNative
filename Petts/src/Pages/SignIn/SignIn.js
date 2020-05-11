@@ -6,7 +6,7 @@ import { ImageBackground, Text, View, StyleSheet,  } from 'react-native';
 
 import { 
   Container, Input, Button, TextoLogin, TextoDica,
-  ContainerInputIcon, TextoTitulo,
+  ContainerInputIcon, TextoTitulo, FundoGradient,
  } from './styles';
 
 const SignIn = ({ navigation }) => {
@@ -37,7 +37,9 @@ const SignIn = ({ navigation }) => {
                 </View>
 
                 <Button>
+                  {/* <FundoGradient> */}
                     <TextoLogin> Login </TextoLogin>
+                  {/* </FundoGradient> */}
                 </Button>
 
                 
