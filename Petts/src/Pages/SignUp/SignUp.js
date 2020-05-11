@@ -1,9 +1,13 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import MaterialCOmmunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { ImageBackground, Text, View, StyleSheet } from 'react-native';
 
-import { Container, Input, Button, TextoLogin, TextoDica, ButtonReturn } from './styles';
+import { 
+  Container, Input, Button, TextoLogin, TextoDica, ButtonReturn,
+  ContainerCentro, 
+} from './styles';
 
 const SignIn = ({ navigation }) => {
     const image = { uri: "https://reactjs.org/logo-og.png" };
@@ -14,20 +18,24 @@ const SignIn = ({ navigation }) => {
             
             <Container>
                 <ButtonReturn onPress={()=> navigation.navigate('SignIn') }>
-                      <View style={{flexDirection:'row'}}>
-                        <Icon name="md-arrow-back" size={30} color="#FFF" />
-                        <Text style={{color:'#FFF', fontSize: 20, marginLeft: 10, fontWeight:'bold'}}> Petts </Text>
-                      </View>
-                      {/* ios-arrow-round-back ios-arrow-back  */}
+                  <Icon name="md-arrow-back" size={30} color="#FFF" />
                 </ButtonReturn>
-                <TextoDica>_______ Preencha os campos: _______</TextoDica>
-                <Input placeholder="Nome" />
-                <Input placeholder="email@email.com" />
-                <Input placeholder="Senha" />
 
-                <Button onPress={()=> navigation.navigate('SignUp')}>
-                    <TextoLogin> Cadastrar </TextoLogin>
-                </Button>
+                <ContainerCentro>
+                  <View style={{ flexDirection:'row' }}>
+                    <MaterialCOmmunityIcons style={{marginRight:15}} name="dog" size={50} color="rgba(128,128,128,0.5)" />
+                    <MaterialCOmmunityIcons name="cat" size={50} color="rgba(128,128,128,0.5)" />
+                  </View>
+
+                  <TextoDica> Preencha os campos: </TextoDica>
+                  <Input placeholder="Nome" />
+                  <Input placeholder="email@email.com" />
+                  <Input placeholder="Senha" />
+
+                  <Button onPress={()=> navigation.navigate('SignUp')}>
+                      <TextoLogin> Cadastrar </TextoLogin>
+                  </Button>
+                </ContainerCentro>
             </Container>
         </ImageBackground>
       </>

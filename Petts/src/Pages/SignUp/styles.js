@@ -2,9 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.View`
 flex: 1;
+background-color: rgba(0, 0, 0, 0.7);
+`;
+
+export const ContainerCentro = styled.View`
+flex: 1;
 align-items: center;
 justify-content: center;
-background-color: rgba(0, 0, 0, 0.7);
 `;
 
 export const Input = styled.TextInput`
@@ -27,7 +31,7 @@ justify-content: center;
 `;
 
 export const ButtonReturn = styled.TouchableOpacity`
-margin: 10px;
+margin: 15px;
 `
 
 export const TextoLogin = styled.Text`

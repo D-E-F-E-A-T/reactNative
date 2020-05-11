@@ -1,7 +1,13 @@
 import React from 'react';
-import { ImageBackground, Text, View, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import { ImageBackground, Text, View, StyleSheet,  } from 'react-native';
 
-import { Container, Input, Button, TextoLogin, TextoDica } from './styles';
+
+import { 
+  Container, Input, Button, TextoLogin, TextoDica,
+  ContainerInputIcon, TextoTitulo,
+ } from './styles';
 
 const SignIn = ({ navigation }) => {
     const image = { uri: "https://reactjs.org/logo-og.png" };
@@ -11,8 +17,25 @@ const SignIn = ({ navigation }) => {
         <ImageBackground source={require('../../assets/img/dogecat.jpg')} style={styles.image}>
             
             <Container>
-                <Input placeholder="email@email.com" />
-                <Input placeholder="***************" />
+                <Icon name="ios-paw" size={80} color="rgba(128,128,128,0.5)" />
+                <TextoTitulo> Petts </TextoTitulo>
+
+                <View style={{ flexDirection:'row' }}>
+                  <ContainerInputIcon>
+                    <MaterialCommunityIcons name="email-outline" size={30} color="rgba(0,0,0,0.5)" />
+                  </ContainerInputIcon>
+                  <Input placeholder="email@email.com" />
+                  
+                </View>
+
+                <View style={{ flexDirection:'row' }}>
+                  <ContainerInputIcon>
+                    <MaterialCommunityIcons name="key-variant" size={30} color="rgba(0,0,0,0.5)" />
+                  </ContainerInputIcon>
+                  <Input placeholder="***************" />
+                  
+                </View>
+
                 <Button>
                     <TextoLogin> Login </TextoLogin>
                 </Button>
