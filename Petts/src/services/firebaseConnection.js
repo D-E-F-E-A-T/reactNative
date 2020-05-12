@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
-import 'firebase/database';
 import 'firebase/auth';
+import 'firebase/database';
 
 let firebaseConfig = {
     apiKey: "AIzaSyBrsfLyOJNZ5oNnDUhffSMPhT_ARwTdp48",
@@ -18,5 +18,5 @@ let firebaseConfig = {
     //   firebase.analytics();
   }
 
-  export default firebaseConfig;
+  export default firebase;
   

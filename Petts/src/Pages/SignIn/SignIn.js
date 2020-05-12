@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import firebase from '../../services/firebaseConnection';
 
-import { ImageBackground, Text, View, StyleSheet,  } from 'react-native';
+import { ImageBackground, Text, View, StyleSheet,  ActivityIndicator } from 'react-native';
 
 
 import { 
@@ -12,21 +12,44 @@ import {
  } from './styles';
 
 const SignIn = ({ navigation }) => {
-    const image = { uri: "https://reactjs.org/logo-og.png" };
+  const image = { uri: "https://reactjs.org/logo-og.png" };
+  const[email, setEmail] = useState('');
+  const[password, setPassword] = useState('');
+  const[visibleActivity, setVisibleActivity] = useState(false);
+
+  async function handleSubmit(){
+    if(email !== '' && password !== ''){
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .catch((error)=> {
+        alert(error.code);
+      });
+    }
+
+    setVisibleActivity(true);
+
+    setTimeout(()=>{
+      setVisibleActivity(false)
+    },5000);
+  }
+
   return(
       <>
         
         <ImageBackground source={require('../../assets/img/dogecat.jpg')} style={styles.image}>
             
             <Container>
-                <Icon name="ios-paw" size={80} color="rgba(128,128,128,0.5)" />
+                <Icon name="ios-paw" size={80} color='rgba(224, 86, 253,0.5)' />
                 <TextoTitulo> Petts </TextoTitulo>
 
                 <View style={{ flexDirection:'row' }}>
                   <ContainerInputIcon>
                     <MaterialCommunityIcons name="email-outline" size={30} color="rgba(0,0,0,0.5)" />
                   </ContainerInputIcon>
-                  <Input placeholder="email@email.com" />
+                  <Input 
+                    placeholder="email@email.com"
+                    value={email}
+                    onChangeText={(email)=> setEmail(email)}
+                  />
                   
                 </View>
 
@@ -34,19 +57,28 @@ const SignIn = ({ navigation }) => {
                   <ContainerInputIcon>
                     <MaterialCommunityIcons name="key-variant" size={30} color="rgba(0,0,0,0.5)" />
                   </ContainerInputIcon>
-                  <Input placeholder="***************" />
+                  <Input 
+                    placeholder="***************"
+                    secureTextEntry={true}
+                    value={password}
+                    onChangeText={(password)=> setPassword(password)}
+                  />
                   
                 </View>
 
-                <Button>
-                  <TextoLogin> Login </TextoLogin>
+                <Button onPress={()=> handleSubmit()}>
+                {
+                    visibleActivity === true 
+                    ? <ActivityIndicator color="#FFF" size={30} />
+                    : <TextoLogin> Login </TextoLogin>
+                  }
                 </Button>
 
                 
                 <TextoDica>_______ Não possui conta? _______</TextoDica>
 
                 <Button onPress={()=> navigation.navigate('SignUp')}>
-                    <TextoLogin> Criar Conta </TextoLogin>
+                  <TextoLogin> Criar Conta </TextoLogin>  
                 </Button>
             </Container>
         </ImageBackground>

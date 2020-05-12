@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import LinearGradient from 'react-native-linear-gradient';
 
 export const Container = styled(LinearGradient).attrs({
-    colors: ['rgba(128,128,128,0.6)','rgba(0,0,0,0.7)']
+    colors: ['rgba(190, 46, 221,0.5)', 'rgba(224, 86, 253,0.5)']
 })`
 flex: 1;
 align-items: center;
@@ -11,7 +11,7 @@ background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const Input = styled.TextInput`
-background-color: rgba(128,128,128, 0.5);
+background-color: rgba(224, 86, 253,0.5);
 margin-bottom: 10px;
 width: 80%;
 height: 50px;
@@ -47,7 +47,7 @@ margin-bottom: 20px;
 export const ContainerInputIcon = styled.View`
 align-items: center;
 justify-content: center;
-background-color: rgba(128,128,128,0.5);
+background-color: rgba(224, 86, 253,0.5);
 margin-bottom: 5px;
 height: 50px;
 border-top-left-radius: 5px;
@@ -56,13 +56,8 @@ padding-left: 3px;
 `;
 
 export const TextoTitulo = styled.Text`
-color: rgba(128,128,128,1);
+color: rgba(224, 86, 253,0.5);
 font-size: 25px;
 font-weight: bold;
 margin-bottom: 5px;
-`;
-
-export const FundoGradient = styled(LinearGradient).attrs({
-    colors: ['#2ecc71','#2c3e50']
-})`
 `;
