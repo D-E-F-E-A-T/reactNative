@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Painel from './Painel/Painel';
 import Find from './Find/Find';
+import Publishis from './Publishis/Publishis';
+import Profile from './Profile/Profile';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -8,26 +10,46 @@ import { View, Text } from 'react-native';
 
 import { 
   Container, TabsContainer, TabsBottom, ContainerComponents,
-  ButtonBottom, 
+  ButtonBottom, ContainerCentral,
 } from './styles';
 
 
 export default function Tabs() {
 
-  const[screen, setScreen] = useState('');
+  useEffect(()=>{
+    setScreen(1)
+  },[]);
+
+  const[screen, setScreen] = useState(1);
+
   function callScrren(choice){
-    if(choice === 1){
-      return <Painel />
-    } else if(choice === 2) {
-      return <Find />
-    }
+
+    setScreen(choice)
+    
   }
+
  return (
    <Container>
+
+    {
+      screen === 1 ? <Painel /> : <></>
+    }
+
+    {
+      screen === 2 ? <Find /> : <></>
+    }
+
+    {
+      screen === 3 ? <Publishis /> : <></>
+    }
+
+    {
+      screen === 4 ? <Profile /> : <></>
+    }
+
+    {/* <ContainerCentral> */}
+     
     <TabsContainer>
-
-      {callScrren()}
-
 
 
 
@@ -41,17 +63,18 @@ export default function Tabs() {
             <Ionicons name="ios-search" color="#FFF" size={30} />
           </ButtonBottom>
 
-          <ButtonBottom>
+          <ButtonBottom onPress={()=> callScrren(3)}>
             <Ionicons name="ios-paw" color="#FFF" size={30} />
           </ButtonBottom>
 
-          <ButtonBottom>
+          <ButtonBottom onPress={()=> callScrren(4)}>
             <Ionicons  name="ios-contact" color="#FFF" size={30} />
           </ButtonBottom>
         </ContainerComponents>
           
         </TabsBottom>
       </TabsContainer>
+      {/* </ContainerCentral> */}
    </Container>
   );
 }

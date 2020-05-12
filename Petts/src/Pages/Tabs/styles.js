@@ -4,7 +4,11 @@ import styled from 'styled-components';
 
 export const Container = styled.View`
 flex: 1;
+`;
+export const ContainerCentral = styled.View`
+flex: 1;
 position: relative;
+z-index: 1;
 `;
 
 export const TabsContainer = styled.View`
