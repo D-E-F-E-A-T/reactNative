@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { Container, Input,
     ContainerForm, Header, ContainerLogo,
     Form, TextButton, ButtonSignIn, ButtonSignUp,
@@ -10,7 +10,7 @@ export default function SignIn({ navigation }) {
    <Container>
        <Header>
            <ContainerLogo>
-            <Text> Logo </Text>
+            <Image style={{ width: 40, height: 40 }} source={require('../../assets/img/avatar.png')} />
            </ContainerLogo>
            <Text style={{ color:'#FFF', fontSize: 20, fontWeight: 'bold'}}> Wultrun </Text>
        </Header>
@@ -23,6 +23,7 @@ export default function SignIn({ navigation }) {
 
             <Input
                 placeholder="Senha"
+                secureTextEntry={true}
             />
 
             <ButtonSignIn>

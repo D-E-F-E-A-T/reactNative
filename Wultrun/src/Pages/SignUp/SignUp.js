@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { Container, Input,
     ContainerForm, Header, ContainerLogo,
     Form, TextButton, ButtonSignIn, ButtonSignUp,
@@ -11,13 +11,11 @@ export default function SignUn({ navigation }) {
    <Container>
        
        <Header>
-            <Button onPress={()=> navigation.navigate('SignIn') }>
-                <Text> Voltar </Text>
-            </Button>
+            
            <ContainerLogo>
-            <Text> Logo </Text>
+            <Image style={{ width: 40, height: 40 }} source={require('../../assets/img/avatar.png')} />
            </ContainerLogo>
-           <Text> SignUp </Text>
+           <Text style={{ color:'#FFF', fontSize: 20, fontWeight: 'bold'}}> Crie sua conta </Text>
        </Header>
        <ContainerForm>
 
@@ -28,6 +26,7 @@ export default function SignUn({ navigation }) {
 
             <Input
                 placeholder="Senha"
+                secureTextEntry={true}
             />
 
             <ButtonSignIn>
@@ -41,6 +40,10 @@ export default function SignUn({ navigation }) {
             <ButtonGoogle>
                 <TextButton> Google </TextButton>
             </ButtonGoogle>
+
+            <Button onPress={()=> navigation.navigate('SignIn') }>
+                <Text style={{ fontSize: 17, color: '#CCC' }}> Já possuo uma conta </Text>
+            </Button>
            </Form>
 
        </ContainerForm>

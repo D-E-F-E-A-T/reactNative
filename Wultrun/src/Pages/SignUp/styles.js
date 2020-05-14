@@ -35,7 +35,7 @@ export const Form = styled.View`
 background-color: #FFF;
 border-radius: 7px;
 width: 90%;
-margin-top: -20;
+margin-top: -40;
 border-width: 1px;
 border-color: #CCC;
 padding: 8px;
@@ -74,4 +74,7 @@ color: #FFF;
 font-size: 18px;
 `;
 
-export const Button = styled.TouchableOpacity``;
+export const Button = styled.TouchableOpacity`
+align-items: center;
+margin-top: 10px;
+`;
