@@ -12,7 +12,7 @@ export default function SignIn({ navigation }) {
            <ContainerLogo>
             <Image style={{ width: 40, height: 40 }} source={require('../../assets/img/avatar.png')} />
            </ContainerLogo>
-           <Text style={{ color:'#FFF', fontSize: 20, fontWeight: 'bold'}}> Wultrun </Text>
+           <Text style={{ color:'#FFF', fontSize: 20, fontWeight: 'bold', borderBottomColor: '#FFF', borderBottomWidth: 0.3, borderTopColor: '#FFF', borderTopWidth: 0.3, marginTop: 5}}> Wultrun </Text>
        </Header>
        <ContainerForm>
 

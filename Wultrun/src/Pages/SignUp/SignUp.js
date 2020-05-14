@@ -20,6 +20,14 @@ export default function SignUn({ navigation }) {
        <ContainerForm>
 
            <Form>
+           <Input
+                placeholder="Nome"
+            />
+
+            <Input
+                placeholder="E-mail"
+            />
+
             <Input
                 placeholder="Usuário"
             />
