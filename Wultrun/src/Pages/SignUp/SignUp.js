@@ -3,15 +3,21 @@ import { Text } from 'react-native';
 import { Container, Input,
     ContainerForm, Header, ContainerLogo,
     Form, TextButton, ButtonSignIn, ButtonSignUp,
+    Button, ButtonGoogle,
 } from './styles'
 
-export default function SignIn({ navigation }) {
+export default function SignUn({ navigation }) {
  return (
    <Container>
+       
        <Header>
+            <Button onPress={()=> navigation.navigate('SignIn') }>
+                <Text> Voltar </Text>
+            </Button>
            <ContainerLogo>
             <Text> Logo </Text>
            </ContainerLogo>
+           <Text> SignUp </Text>
        </Header>
        <ContainerForm>
 
@@ -25,12 +31,16 @@ export default function SignIn({ navigation }) {
             />
 
             <ButtonSignIn>
-                <TextButton> Acessar </TextButton>
+                <TextButton> Criar Conta </TextButton>
             </ButtonSignIn>
 
-            <ButtonSignUp onPress={()=> navigation.navigate('SignUp')}>
-                <TextButton style={{color:'#45aaf2'}}> Criar Conta </TextButton>
+            <ButtonSignUp>
+                <TextButton> Facebook </TextButton>
             </ButtonSignUp>
+
+            <ButtonGoogle>
+                <TextButton> Google </TextButton>
+            </ButtonGoogle>
            </Form>
 
        </ContainerForm>
