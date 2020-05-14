@@ -12,6 +12,7 @@ export default function SignIn({ navigation }) {
            <ContainerLogo>
             <Text> Logo </Text>
            </ContainerLogo>
+           <Text style={{ color:'#FFF', fontSize: 20, fontWeight: 'bold'}}> Wultrun </Text>
        </Header>
        <ContainerForm>
 

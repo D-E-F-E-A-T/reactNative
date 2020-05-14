@@ -49,14 +49,14 @@ border-radius: 100px;
 `;
 
 export const ButtonSignUp = styled.TouchableOpacity`
-background-color: #45aaf2;
+background-color: #3b5998;
 margin-top: 15px;
 padding: 10px;
 border-radius: 100px;
 `;
 
 export const ButtonGoogle = styled.TouchableOpacity`
-background-color: #F2E;
+background-color: #ff0000;
 margin-top: 15px;
 padding: 10px;
 border-radius: 100px;
