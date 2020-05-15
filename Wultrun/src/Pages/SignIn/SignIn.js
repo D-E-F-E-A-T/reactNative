@@ -26,7 +26,7 @@ export default function SignIn({ navigation }) {
                 secureTextEntry={true}
             />
 
-            <ButtonSignIn>
+            <ButtonSignIn onPress={()=> navigation.navigate('Profile')}>
                 <TextButton> Acessar </TextButton>
             </ButtonSignIn>
 

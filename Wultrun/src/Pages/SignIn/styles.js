@@ -5,11 +5,13 @@ export const Container = styled.View`
 flex: 1;
 `;
 
+// #2bcbba #45aaf2
+
 export const Header = styled(LinearGradient).attrs({
-    colors: ['#2bcbba','#45aaf2'],
-    start: {x: 0.2, y: 0.7},
-    end: {x: 0.7, y: 1.5},
-    locations: [0.2,0.4,0.2],
+    colors: ['#2FAEFF','#2BD0FF'],
+    start: {x: 0.1, y: 0.7},
+    end: {x: 0.4, y: 1.5},
+    locations: [0.0,0.4,0.2],
 })`
 height: 30%;
 align-items:center;
@@ -42,15 +44,15 @@ padding: 8px;
 `;
 
 export const ButtonSignIn = styled.TouchableOpacity`
-background-color: #2bcbba;
+background-color: #2FAEFF;
 margin-top: 10px;
 padding: 10px;
 border-radius: 100px;
 `;
 
 export const ButtonSignUp = styled.TouchableOpacity`
-/* background-color: #45aaf2; */
-border-color: #45aaf2;
+/* background-color: #2FAEFF; */
+border-color: #2FAEFF;
 border-width: 1px;
 margin-top: 15px;
 padding: 10px;

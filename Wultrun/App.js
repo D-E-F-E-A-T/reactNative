@@ -8,6 +8,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import SignIn from './src/Pages/SignIn/SignIn';
 import SignUp from './src/Pages/SignUp/SignUp';
+import Profile from './src/Pages/Profile/Profile';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -18,12 +19,12 @@ function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor="#2bcbba" />
+      <StatusBar backgroundColor="#2FAEFF" />
       <Stack.Navigator>
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown:false }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown:false }} />
-        {/* <Stack.Screen name="Route" component={Route} />
-        <Stack.Screen name="Tela1" component={Tela1} />
+        <Stack.Screen name="Profile" component={Profile} options={{ headerShown:false }} />
+        {/* <Stack.Screen name="Tela1" component={Tela1} />
         <Stack.Screen name="Tela2" component={Tela2} /> */}
       </Stack.Navigator>
 

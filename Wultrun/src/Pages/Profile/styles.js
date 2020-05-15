@@ -16,9 +16,9 @@ align-items:center;
 justify-content:center;
 `;
 
-export const ContainerLogo = styled.View`
+export const ContainerFotoPerfil = styled.View`
 background-color:#FFF;
-border-radius: 7px;
+border-radius: 100px;
 width: 60px;
 height: 60px;
 
@@ -27,18 +27,7 @@ align-items: center;
 `;
 
 export const ContainerForm = styled.View`
-align-items:center;
 flex: 1;
-`;
-
-export const Form = styled.View`
-background-color: #FFF;
-border-radius: 7px;
-width: 90%;
-margin-top: -40;
-border-width: 1px;
-border-color: #CCC;
-padding: 8px;
 `;
 
 export const ButtonSignIn = styled.TouchableOpacity`
@@ -65,6 +54,7 @@ border-radius: 100px;
 export const Input = styled.TextInput`
 border-bottom-color: #CCC;
 border-bottom-width: 1px;
+font-size: 15px;
 margin: 5px;
 `;
 
@@ -76,5 +66,12 @@ font-size: 18px;
 
 export const Button = styled.TouchableOpacity`
 align-items: center;
+margin-top: 10px;
+`;
+
+export const TextName = styled.Text`
+color:#FFF;
+font-size: 20px;
+font-weight: bold;
 margin-top: 10px;
 `;
