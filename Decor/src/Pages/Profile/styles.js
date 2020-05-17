@@ -7,8 +7,6 @@ background-color: #FFF;
 
 export const ContainerCenter = styled.View`
 flex: 1;
-align-items: center;
-justify-content: center;
 `;
 
 export const Card = styled.View`
@@ -53,7 +51,7 @@ width: 100px;
 `;
 
 export const TextTabButton = styled.Text`
-color: #000;
+color: #ff7979;
 font-size: 15px;
 font-weight: bold;
 text-align: center;

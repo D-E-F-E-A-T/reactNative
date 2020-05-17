@@ -3,11 +3,11 @@ import { View, TouchableOpacity, Image, } from 'react-native';
 
 import { Card } from './styles';
 
-export default function Cards(){
+export default function Cards({ data }){
     return(
       <>
       <View style={{ flexDirection:'row' }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> data.callComponent()}>
             <Card>
               <Image style={{ width: 70, height: 70, }} source={require('../../assets/img/tecnologica.png')} />
             </Card>

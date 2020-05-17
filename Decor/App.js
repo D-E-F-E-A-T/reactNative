@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Profile from './src/Pages/Profile/Profile';
 import SignIn from './src/Pages/SignIn/SignIn';
+import Details from './src/Pages/Details/Details';
 
 
 
@@ -20,6 +21,7 @@ export default function App(){
       <Stack.Navigator>
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown:false }} />
         <Stack.Screen name="Profile" component={Profile} options={{ headerShown:false }} />
+        <Stack.Screen name="Details" component={Details} options={{ headerShown:false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

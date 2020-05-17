@@ -4,18 +4,24 @@ import {
   Defs, Stop, 
 } from 'react-native-svg';
 import Cards from './Cards';
+import ListCard from './ListCards';
+import CircleCards from './CircleCards';
 
-import { View, Text, TouchableOpacity, Image,  } from 'react-native';
+import { View, Text, TouchableOpacity  } from 'react-native';
 import { 
   Container, ContainerCenter, Card, ContainerHeader,
   BarTop, TabButton, TextTabButton, 
 } from './styles'
 
 
-export default function Profile() {
+export default function Profile({ navigation }) {
   const[btn1, setBtn1] = useState('rgba(255, 121, 121,0.7)');
   const[btn2, setBtn2] = useState('#FFF');
   const[btn3, setBtn3] = useState('#FFF');
+
+  const[screen1, setScreen1] = useState(true);
+  const[screen2, setScreen2] = useState(false);
+  const[screen3, setScreen3] = useState(false);
 
   function changeBackground(color){
 
@@ -23,22 +29,40 @@ export default function Profile() {
       setBtn1('rgba(255, 121, 121,0.7)');
       setBtn2('#FFF');
       setBtn3('#FFF');
+
+      setScreen1(true);
+      setScreen2(false);
+      setScreen3(false);
     } else if(color === 'btn2'){
       setBtn2('rgba(255, 121, 121,0.7)');
       setBtn1('#FFF');
       setBtn3('#FFF');
+
+      setScreen2(true);
+      setScreen1(false);
+      setScreen3(false);
     } else if(color === 'btn3'){
       setBtn3('rgba(255, 121, 121,0.7)');
       setBtn2('#FFF');
       setBtn1('#FFF');
+
+      setScreen3(true);
+      setScreen2(false);
+      setScreen1(false);
     }
   }
+
+  function callComponent(){
+
+    return navigation.navigate('Details')
+  }
+
  return (
    <Container>
       <View style={{ width:'100%', height:'30%', backgroundColor:'#FFF' }}>
         <ContainerHeader>
           <BarTop>
-            <TabButton style={{ backgroundColor: btn1 }} onPress={()=> changeBackground('btn1')} underlayColor='rgba(255, 121, 121,0.7)'>
+            <TabButton  style={{ backgroundColor: btn1 }} onPress={()=> changeBackground('btn1')} underlayColor='rgba(255, 121, 121,0.7)'>
               <TextTabButton> Home </TextTabButton>
             </TabButton>
 
@@ -50,6 +74,10 @@ export default function Profile() {
               <TextTabButton> Stop </TextTabButton>
             </TabButton>
           </BarTop>
+
+          {/* <TouchableOpacity onPress={()=> callComponent()}>
+            <Text> Details </Text>
+          </TouchableOpacity> */}
         </ContainerHeader>
         <Svg>
 
@@ -83,7 +111,23 @@ export default function Profile() {
       </View>
      
       <ContainerCenter>
-        <Cards />
+        
+        <View style={{ alignItems:'center', justifyContent:'center' }}>
+        {
+          screen1 === true ? <Cards /> : <></>
+        }
+        </View>
+
+        <View style={{ marginTop: 70, }}>
+        {
+          screen2 === true ? <ListCard /> : <></>
+        }
+        </View>
+
+        {
+          screen3 === true ? <CircleCards />: <></>
+        }
+
       </ContainerCenter>
    </Container>
   );
