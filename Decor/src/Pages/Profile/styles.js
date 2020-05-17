@@ -19,6 +19,9 @@ border-radius: 7px;
 margin: 10px;
 border-color: #F2EDED;
 border-width: 2px;
+
+align-items: center;
+justify-content: center;
 `;
 
 export const Button = styled.TouchableOpacity``;
@@ -33,11 +36,14 @@ justify-content: center;
 
 export const BarTop = styled.View`
 background-color: #FFF;
-width: 80%;
+width: 85%;
 margin-top: 5px;
 border-radius: 100px;
 flex-direction: row;
 justify-content: space-between;
+
+border-color: #CCC;
+border-width: 2px;
 `;
 
 export const TabButton = styled.TouchableHighlight`
@@ -51,4 +57,5 @@ color: #000;
 font-size: 15px;
 font-weight: bold;
 text-align: center;
+font-style: italic;
 `;

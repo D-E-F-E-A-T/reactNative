@@ -3,8 +3,9 @@ import {
   Rect, Circle, Svg, Ellipse, LinearGradient,
   Defs, Stop, 
 } from 'react-native-svg';
+import Cards from './Cards';
 
-import { View, Text, TouchableOpacity,   } from 'react-native';
+import { View, Text, TouchableOpacity, Image,  } from 'react-native';
 import { 
   Container, ContainerCenter, Card, ContainerHeader,
   BarTop, TabButton, TextTabButton, 
@@ -82,49 +83,9 @@ export default function Profile() {
       </View>
      
       <ContainerCenter>
-        <View style={{ flexDirection:'row' }}>
-          <TouchableOpacity>
-          <Card>
-            <Text> Teste </Text>
-          </Card>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-          <Card>
-            <Text> Teste </Text>
-          </Card>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ flexDirection:'row' }}>
-          <TouchableOpacity>
-          <Card>
-            <Text> Teste </Text>
-          </Card>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-          <Card>
-            <Text> Teste </Text>
-          </Card>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ flexDirection:'row' }}>
-
-        <TouchableOpacity>
-          <Card>
-            <Text> Teste </Text>
-          </Card>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-          <Card>
-            <Text> Teste </Text>
-          </Card>
-          </TouchableOpacity>
-        </View>
+        <Cards />
       </ContainerCenter>
    </Container>
   );
 }
+
