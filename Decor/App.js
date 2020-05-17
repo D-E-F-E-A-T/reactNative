@@ -1,19 +1,26 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
   StatusBar,
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Container from './src/Pages/Profile/Profile';
+import Profile from './src/Pages/Profile/Profile';
+import SignIn from './src/Pages/SignIn/SignIn';
+
+
+
+const Stack = createStackNavigator();
 
 export default function App(){
   return(
-    <Container>
-      
-    </Container>
+
+    <NavigationContainer>
+      <StatusBar backgroundColor="#ff7979"/>
+      <Stack.Navigator>
+        <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown:false }} />
+        <Stack.Screen name="Profile" component={Profile} options={{ headerShown:false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
