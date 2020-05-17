@@ -14,7 +14,7 @@ justify-content: center;
 export const Card = styled.View`
 width: 150px;
 height: 130px;
-background-color: rgba(255, 121, 121,0.5);
+background-color: rgba(245, 246, 250,0.7);
 border-radius: 7px;
 margin: 10px;
 border-color: #F2EDED;
@@ -22,3 +22,33 @@ border-width: 2px;
 `;
 
 export const Button = styled.TouchableOpacity``;
+
+export const ContainerHeader = styled.View`
+background-color: rgba(255, 121, 121,1);
+width: 100%;
+height: 30%;
+align-items: center;
+justify-content: center;
+`;
+
+export const BarTop = styled.View`
+background-color: #FFF;
+width: 80%;
+margin-top: 5px;
+border-radius: 100px;
+flex-direction: row;
+justify-content: space-between;
+`;
+
+export const TabButton = styled.TouchableHighlight`
+border-radius: 100px;
+padding: 10px;
+width: 100px;
+`;
+
+export const TextTabButton = styled.Text`
+color: #000;
+font-size: 15px;
+font-weight: bold;
+text-align: center;
+`;
