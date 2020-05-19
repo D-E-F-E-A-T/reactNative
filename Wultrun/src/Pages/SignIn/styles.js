@@ -60,9 +60,15 @@ border-radius: 100px;
 `;
 
 export const Input = styled.TextInput`
+margin: 5px;
+width: 70%;
+`;
+
+export const ContainerInput = styled.View`
 border-bottom-color: #CCC;
 border-bottom-width: 1px;
-margin: 5px;
+flex-direction: row;
+align-items: center
 `;
 
 export const TextButton = styled.Text`

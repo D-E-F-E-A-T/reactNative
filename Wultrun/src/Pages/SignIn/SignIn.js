@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import { Text, Image, View, } from 'react-native';
 import { Container, Input,
     ContainerForm, Header, ContainerLogo,
-    Form, TextButton, ButtonSignIn, ButtonSignUp,
+    Form, TextButton, ButtonSignIn, ButtonSignUp, ContainerInput,
 } from './styles'
 
 export default function SignIn({ navigation }) {
@@ -17,16 +19,23 @@ export default function SignIn({ navigation }) {
        <ContainerForm>
 
            <Form>
-            <Input
-                placeholder="Usuário"
-            />
+            <ContainerInput>
+                <Icon style={{marginRight: 10,}} name="md-contact" color="#CCC" size={20} />
 
-            <Input
-                placeholder="Senha"
-                secureTextEntry={true}
-            />
+                <Input
+                    placeholder="Usuário"
+                />
+            </ContainerInput>
 
-            <ButtonSignIn onPress={()=> navigation.navigate('Profile')}>
+            <ContainerInput>
+                <Icon style={{marginRight: 10,}} name="md-mail" color="#CCC" size={20} />
+                <Input
+                    placeholder="Senha"
+                    secureTextEntry={true}
+                />
+            </ContainerInput>
+
+            <ButtonSignIn onPress={()=> navigation.navigate('Tabs')}>
                 <TextButton> Acessar </TextButton>
             </ButtonSignIn>
 

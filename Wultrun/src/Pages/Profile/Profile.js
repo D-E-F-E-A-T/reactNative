@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import { Text, Image } from 'react-native';
 import { Container, Input,
     ContainerForm, Header, ContainerFotoPerfil,
     TextButton, ButtonSignIn, ButtonSignUp,
     Button, ButtonGoogle, TextName
-} from './styles'
+} from './styles';
+import { View } from 'react-native-animatable';
 
 export default function Profile({ navigation }) {
 
@@ -19,9 +22,10 @@ export default function Profile({ navigation }) {
    <Container>
        
        <Header>
-            
+        
+        <Icon name="ios-settings" color="#CCC" size={30} />
            <ContainerFotoPerfil>
-            <Image style={{ width: 40, height: 40 }} source={require('../../assets/img/avatar.png')} />
+            <Icon name="md-contact" color="#CCC" size={60} />
            </ContainerFotoPerfil>
            <TextName> {nome} </TextName>
        </Header>
