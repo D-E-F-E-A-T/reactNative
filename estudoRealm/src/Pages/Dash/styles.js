@@ -44,6 +44,9 @@ flex-direction: row;
 justify-content: space-around;
 `;
 
-export const List = styled.FlatList`
+export const List = styled.FlatList.attrs({
+    contentContainerStyle: {paddingHorizontal: 20},
+    showVerticalScrollIndicator: false,
+})`
 margin-top: 20px;
 `;

@@ -5,9 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Route from './Route';
+
 import Dash from './Pages/Dash/';
-import Tela2 from './components/Tela2';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();

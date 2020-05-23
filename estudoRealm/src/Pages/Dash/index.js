@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
 import { Container, Title, Input, Button, CenterView, List, ButtonText } from './styles';
 import Jobs from '../Jobs';
+import getRealm from '../../services/realm';
 
 export default class Dash extends Component {
     constructor(props){
@@ -11,6 +12,27 @@ export default class Dash extends Component {
             nome:'',
             cargo:'',
             jobs:[],
+        }
+
+        this.addJob = this.addJob.bind(this);
+        this.saveJob = this.saveJob.bind(this);
+    }
+
+    saveJob = async (data) => {
+        const realm = await getRealm();
+    }
+
+    addJob = async () => {
+        try{
+            if(this.state.nome === '' || this.state.cargo === ''){
+                alert('Preencha todos os campos');
+                return;
+            }
+
+            const data = {nome: this.state.nome, cargo: this.state.cargo};
+            this.saveJob(data);
+        }catch(error){
+            alert(error)
         }
     }
  render(){
@@ -25,7 +47,7 @@ export default class Dash extends Component {
             onChangeText={(cargo)=> this.setState({ cargo: cargo })} />
 
             <CenterView>
-                <Button>
+                <Button onPress={()=> this.addJob()}>
                     <ButtonText> Cadastrar </ButtonText>
                 </Button>
 
