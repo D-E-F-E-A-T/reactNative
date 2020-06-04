@@ -1,2 +1,2 @@
-#GitHub
-repositório de projetos de estudo React Native
+# Repositório de projetos React Native
+## Marcelo Azevedo
