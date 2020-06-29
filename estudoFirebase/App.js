@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   StyleSheet,
   View,
@@ -11,7 +11,7 @@ import {
   ScrollView,
   Keyboard,
   Alert,
-  ActivityIndicator,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import firebase from './src/services/firebaseConnection';
@@ -23,7 +23,7 @@ const App = () => {
   console.disableYellowBox=true;
 
   
-
+  const inputRef = useRef(null);
   const[newTask, setNewTask] = useState('');
   const[tasks, setTasks] = useState([]);
   const[cor, setCor] = useState([
@@ -132,6 +132,10 @@ const App = () => {
     await firebase.database().ref('tarefas').child(key).remove();
   }
 
+  function handleEdit(data){
+    setNewTask(data.nome);
+    inputRef.current.focus();
+  }
 
   return (
     <>
@@ -146,6 +150,7 @@ const App = () => {
               value={newTask}
               placeholder="Tarefas"
               onChangeText={(item)=> setNewTask(item)}
+              ref={inputRef}
             />
 
             <TouchableOpacity style={styles.btnCadastrar} onPress={()=> handleAdd()}>
@@ -157,7 +162,7 @@ const App = () => {
             <FlatList
               data={tasks}
               keyExtractor={ item => item.key}
-              renderItem={({item}) => <List data={item} deleteItem={handleDelete} />}
+              renderItem={({item}) => <List data={item} deleteItem={handleDelete} editItem={handleEdit} />}
             />
           </ScrollView>
           <Text> Desenvolvido por: Marcelo Rafael </Text>
@@ -166,14 +171,17 @@ const App = () => {
   );
 };
 
-export function List({ data, deleteItem }){
+export function List({ data, deleteItem, editItem }){
 
   return(
     <View style={[styles.containerList, { backgroundColor: data.cor}]}>
       <TouchableOpacity onPress={()=> deleteItem(data.key, data.nome)}>
         <Image style={styles.img} source={require('./src/assets/bin.png')} />
       </TouchableOpacity>
-      <Text style={styles.txtList}> {data.nome} </Text>
+
+      <TouchableWithoutFeedback onPress={()=> editItem(data)}>
+        <Text style={styles.txtList}> {data.nome} </Text>
+      </TouchableWithoutFeedback>
     </View>
   );
 }
