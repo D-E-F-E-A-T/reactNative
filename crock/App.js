@@ -13,6 +13,7 @@ import SignIn from './src/Pages/SignIn/SignIn';
 import ScreenEnpreendedor from './src/Pages/ScreenEnpreendedor/';
 import FirstLoad from './src/components/FirstLoad';
 import ScreenFirstEnter from './src/components/ScreenFirstEnter/';
+import ScreenEmpresa from './src/Pages/ScreenEmpresa/';
 
 
 const Tab = createBottomTabNavigator();
@@ -57,6 +58,8 @@ function App() {
       <Stack.Screen name="FirstLoad" component={FirstLoad} options={{ headerShown: false }} />
         <Stack.Screen name="ScreenFirstEnter" component={ScreenFirstEnter} options={{ headerShown: false }} />
         <Stack.Screen name="ScreenEnpreendedor" component={ScreenEnpreendedor} options={{ headerShown: false }}  />
+        <Stack.Screen name="ScreenEmpresa" component={ScreenEmpresa} options={{ headerShown: false }}  />
+        
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }}  />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
       </Stack.Navigator>

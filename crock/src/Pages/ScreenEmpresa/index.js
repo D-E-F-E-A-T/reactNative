@@ -5,10 +5,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { 
     Container, Title, InputForm, Button, TextButton,
     Header, ContainerInputs, ContainerPicker, PickerSelect,
-    ContainerEndereco, InputNumero, InputEndereco,  
+    ContainerEndereco, InputNumero, InputEndereco,  ButtonReturn, 
 } from './styles';
 
-export default function ScreenEnpreendedor({ navigation }) {
+export default function ScreenEmpresa({ navigation }) {
 
  const[estado, setEstado] = useState('');
  const[cidade, setCidade] = useState('');
@@ -16,15 +16,20 @@ export default function ScreenEnpreendedor({ navigation }) {
  return (
    <Container>
        <Header>
-        <Button onPress={()=> navigation.navigate('ScreenFirstEnter')}>
+        <ButtonReturn onPress={()=> navigation.navigate('ScreenEnpreendedor')}>
             <Icon name="ios-arrow-back" color="#FFF" size={30} />
-        </Button>
+        </ButtonReturn>
 
         <View style={{ alignItems:'center', justifyContent:'center', }}>
-            <Title> Bem-Vindo </Title>
-            <Title> Empreendedor </Title>
+            <Title> Agora Cadastraremos sua empresa </Title>
         </View>
        </Header>
+        
+        <InputForm placeholder="CNPJ" />
+        <InputForm placeholder="Razão Social" />
+        <InputForm placeholder="Nome Fantasia" />
+        <InputForm placeholder="CEP" />
+        <InputForm placeholder="Nome Fantasia" />
         <ContainerInputs>
 
             <ContainerPicker>
@@ -52,31 +57,15 @@ export default function ScreenEnpreendedor({ navigation }) {
                 </PickerSelect>
             </ContainerPicker>
         </ContainerInputs>
-        <InputForm placeholder="Nome" />
-        <InputForm placeholder="E-mail" />
-        <InputForm placeholder="Teefone" />
 
         <ContainerEndereco>
             <InputEndereco placeholder="Endereço" />
             <InputNumero placeholder="Número" />
         </ContainerEndereco>
 
-        <ContainerPicker  style={{ width: '90%', }}>
-            <PickerSelect
-             style={{ width: '90%', }}
-                selectedValue={especialidade}
-                onValueChange={(itemValue, itemIndex) => setEspecialidade(itemValue)}
-            >
-                <PickerSelect.Item label="Pizza" value='pizza' />
-                <PickerSelect.Item label="Coxinha" value='coxinha' />
-                <PickerSelect.Item label="Pães e Massas" value='paes_e_massas' />
-                <PickerSelect.Item label="Pastel" value='pastel' />
-            </PickerSelect>
-        </ContainerPicker>
 
-        <Button onPress={() => navigation.navigate('ScreenEmpresa')}>
-            <TextButton> Próximo </TextButton>
-            <Icon name="ios-arrow-forward" color="#FFF" size={20} />
+        <Button>
+            <TextButton> Cadastrar </TextButton>
         </Button>
    </Container>
   );

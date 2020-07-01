@@ -38,6 +38,10 @@ margin: 5px;
 text-align: center;
 `;
 
+export const ButtonReturn = styled.TouchableOpacity`
+margin: 8px;
+`;
+
 export const Button = styled.TouchableOpacity`
 width: 90%;
 height: 50px;
