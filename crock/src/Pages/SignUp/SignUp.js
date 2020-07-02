@@ -1,37 +1,50 @@
 import React from 'react';
 
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { View } from 'react-native';
 
 import { 
     Container, Input, TextButton, Button, Form,
-    Title, CantainerForm, TextFooter, TextSignUp,
-    ContainerTextButton,
+    Title, CantainerForm, ContainerTextButton, Header, 
  } from './styles';
 
 export default function SignUp({ navigation }) {
  return (
     <Container>
-        
+    
+    <Header>
     <Button onPress={()=> navigation.navigate("SignIn")}>
-        <Icon style={{ margin: 10,  }} name="ios-arrow-round-back" color="#FFB333" size={50} />
+        <Icon style={{ margin: 10,  }} name="arrow-left" color="#FFF" size={40} />
     </Button>
+    </Header>
     <CantainerForm>
      <Form>
-         <Title> Criar Conta </Title>
+         <View style={{ flexDirection:'row', alignItems:'center' }}>
+            <Icon name="account" color="#FFF" size={25} />
+            <Title> Criar Conta </Title>
+         </View>
+
          <Input
-             placeholder="Usuário"
+             placeholder="Nome"
          />
 
          <Input
-             placeholder="Senha"
+             placeholder="CPF"
+         />
+
+        <Input
+             placeholder="Telefone"
+         />
+
+        <Input
+             placeholder="E-mail"
          />
 
          <Button>
              <ContainerTextButton>
                  <TextButton> Cadastrar </TextButton>
-                 <Icon name="ios-arrow-round-forward" color="#FFF" size={20} />
+                 <Icon name="arrow-right" color="#FFF" size={20} />
              </ContainerTextButton>
          </Button>
 
@@ -42,10 +55,6 @@ export default function SignUp({ navigation }) {
 
      
     </CantainerForm>
-     
-    <Button onPress={()=> navigation.navigate("SignUp") }>
-         <TextFooter> Ainda não possui conta?  <TextSignUp> Criar Conta </TextSignUp> </TextFooter>
-     </Button>
 </Container>
   );
 }

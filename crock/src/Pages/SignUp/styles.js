@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import LienarGradient from 'react-native-linear-gradient';
 
-export const Container = styled.View`
+export const Container = styled(LienarGradient).attrs({
+    colors: ['#FFB333','#FEA13A'],
+    start:{x: 0.2, y: 0.5}, end:{x: 0.5, y: 1.0},
+    locations:[0,1.5,0.6],
+})`
 flex: 1;
-background-color: #FFF;
+/* background-color: #FFFAFA; */
 `;
  
 export const Input = styled.TextInput`
@@ -20,20 +24,21 @@ color: #FFF;
 
 export const Button = styled.TouchableOpacity`
 
+width: 80%;
 `;
 
 export const ContainerTextButton = styled(LienarGradient).attrs({
-    colors: ['#FFB333','#FEA13A'],
+    colors: ['#FFB000','#FEA13A'],
     start:{x: 0.2, y: 0.5}, end:{x: 0.5, y: 1.0},
     locations:[0,1.5,0.6],
 })`
-/* background-color: #FFB333; */
 margin-top: 15px;
 padding: 10px;
 border-radius: 10px;
 
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
 `;
 
 export const CantainerForm = styled.View`
@@ -51,17 +56,16 @@ justify-content: center;
 `;
 
 export const Title = styled.Text`
-color: #333;
+color: #FFF;
 font-size: 30px;
 font-weight: bold;
-`;
-
-export const TextFooter = styled.Text`
-text-align: center;
-margin-bottom: 5px;
 `;
 
 export const TextSignUp = styled.Text`
 color: #FFB333;
 font-weight: bold;
+`;
+
+export const Header = styled.View`
+padding-top: 10px;
 `;

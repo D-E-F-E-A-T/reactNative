@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { 
     Container, Input, TextButton, Button, Form,
     Title, CantainerForm, TextFooter, TextSignUp,
-    ContainerTextButton,
+    ContainerTextButton, Footer, 
  } from './styles';
 
 export default function SignIn({ navigation }) {
@@ -37,9 +37,11 @@ export default function SignIn({ navigation }) {
         
        </CantainerForm>
         
-       <Button onPress={()=> navigation.navigate("SignUp") }>
+        <Footer>
+        <Button onPress={()=> navigation.navigate("SignUp") }>
             <TextFooter> Ainda não possui conta?  <TextSignUp> Criar Conta </TextSignUp> </TextFooter>
         </Button>
+        </Footer>
    </Container>
   );
 }
