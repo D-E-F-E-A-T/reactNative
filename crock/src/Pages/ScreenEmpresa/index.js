@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, ImageBackground, StyleSheet, } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { 
@@ -16,13 +16,16 @@ export default function ScreenEmpresa({ navigation }) {
  return (
    <Container>
        <Header>
+       <ImageBackground source={require('../../assets/almoco.jpg')} style={styles.image}>
         <ButtonReturn onPress={()=> navigation.navigate('ScreenEnpreendedor')}>
-            <Icon name="ios-arrow-back" color="#FFF" size={30} />
+            <Icon name="ios-arrow-back" color="#000" size={30} />
         </ButtonReturn>
 
         <View style={{ alignItems:'center', justifyContent:'center', }}>
-            <Title> Agora Cadastraremos sua empresa </Title>
+            <Title> Muito Bem! </Title>
+            <Title> Agora Cadastre sua empresa </Title>
         </View>
+        </ImageBackground>
        </Header>
         
         <InputForm placeholder="CNPJ" />
@@ -70,3 +73,12 @@ export default function ScreenEmpresa({ navigation }) {
    </Container>
   );
 }
+
+const styles = StyleSheet.create({
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        opacity: 0.6,
+    }
+});

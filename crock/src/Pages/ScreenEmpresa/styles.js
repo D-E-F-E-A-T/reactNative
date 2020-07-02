@@ -7,8 +7,8 @@ align-items: center;
 `;
 
 export const Title = styled.Text`
-color: #FFF;
-font-size: 20px;
+color: #000;
+font-size: 25px;
 font-weight: bold;
 `;
 
@@ -66,7 +66,7 @@ font-weight: bold;
 export const Header = styled.View`
 width: 100%;
 height: 20%;
-background-color: #FFA500;
+margin-bottom: 8px;
 `;
 
 export const ContainerInputs = styled.View`

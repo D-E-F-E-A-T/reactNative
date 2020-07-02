@@ -10,7 +10,7 @@ export default function ScreenFirstEnter({ navigation }) {
  return (
    <Container>
         
-        <ImageBackground source={require('../../assets/almoco.webp')} style={styles.image}>
+        <ImageBackground source={require('../../assets/almoco.jpg')} style={styles.image}>
             <Container>
                 <Title> Opa! Tudo bem </Title>
                 <Title> queremos saber quem é você? </Title>
@@ -18,7 +18,7 @@ export default function ScreenFirstEnter({ navigation }) {
                     <TextButton> Empreendedor </TextButton>
                 </Button>
 
-                <Button>
+                <Button onPress={()=> navigation.navigate('SignIn')}>
                     <TextButton> Consumidor </TextButton>
                 </Button>
             </Container>

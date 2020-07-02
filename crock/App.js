@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { View, StatusBar, } from 'react-native';
+import { View, StatusBar, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -52,8 +53,8 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <StatusBar backgroundColor="#FFA500" />
+    <NavigationContainer style={styles.container}>
+      <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
       <Stack.Navigator>
       <Stack.Screen name="FirstLoad" component={FirstLoad} options={{ headerShown: false }} />
         <Stack.Screen name="ScreenFirstEnter" component={ScreenFirstEnter} options={{ headerShown: false }} />
@@ -70,5 +71,10 @@ function App() {
     
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 0 + getStatusBarHeight,
+  }
+});
 
 export default App;

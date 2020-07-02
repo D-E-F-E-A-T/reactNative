@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, ImageBackground, StyleSheet, } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { 
     Container, Title, InputForm, Button, TextButton,
     Header, ContainerInputs, ContainerPicker, PickerSelect,
-    ContainerEndereco, InputNumero, InputEndereco,  
+    ContainerEndereco, InputNumero, InputEndereco, ButtonReturn, 
 } from './styles';
 
 export default function ScreenEnpreendedor({ navigation }) {
@@ -16,14 +16,16 @@ export default function ScreenEnpreendedor({ navigation }) {
  return (
    <Container>
        <Header>
-        <Button onPress={()=> navigation.navigate('ScreenFirstEnter')}>
-            <Icon name="ios-arrow-back" color="#FFF" size={30} />
-        </Button>
+       <ImageBackground source={require('../../assets/almoco.jpg')} style={styles.image}>
+        <ButtonReturn onPress={()=> navigation.navigate('ScreenFirstEnter')}>
+            <Icon name="ios-arrow-back" color="#000" size={30} />
+        </ButtonReturn>
 
         <View style={{ alignItems:'center', justifyContent:'center', }}>
             <Title> Bem-Vindo </Title>
             <Title> Empreendedor </Title>
         </View>
+        </ImageBackground>
        </Header>
         <ContainerInputs>
 
@@ -81,3 +83,12 @@ export default function ScreenEnpreendedor({ navigation }) {
    </Container>
   );
 }
+
+const styles = StyleSheet.create({
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        opacity: 0.6,
+    }
+});
