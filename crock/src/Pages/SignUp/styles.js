@@ -7,11 +7,10 @@ export const Container = styled(LienarGradient).attrs({
     locations:[0,1.5,0.6],
 })`
 flex: 1;
-/* background-color: #FFFAFA; */
 `;
  
 export const Input = styled.TextInput`
-border-bottom-color: #CCC;
+border-bottom-color: #FFF;
 border-bottom-width: 1px;
 width: 80%;
 `;

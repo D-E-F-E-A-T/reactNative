@@ -11,7 +11,7 @@ background-color: #FFF;
 `;
  
 export const Input = styled.TextInput`
-border-bottom-color: #CCC;
+border-bottom-color: #FFF;
 border-bottom-width: 1px;
 width: 80%;
 `;

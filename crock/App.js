@@ -52,7 +52,7 @@ const Stack = createStackNavigator();
 // }
 
 function App() {
-  console.disableYellowBox=true;
+  // console.disableYellowBox=true;
   return (
     <NavigationContainer style={styles.container}>
       <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
